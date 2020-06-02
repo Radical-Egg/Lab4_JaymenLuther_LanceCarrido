@@ -79,75 +79,30 @@ class Queue : public SinglyLinkedList<T>
 template <typename T>
 void Queue<T>::enQueue(T data)
 {
-    //create a new node
-    LinkNode<T>* temp = new LinkNode<T>(data);
-
-    // if the queue is empty then the new node is front and rear
-    if (rear == NULL)
-    {
-        front = rear = temp;
-        return;
-    }
-
-    // add the new new at the end of the queue and change the rear
-    rear->next = temp;
-    rear = temp;
+   this->append(data);
 }
 
 template <typename T>
 void Queue<T>::deQueue()
 {
-        // If queue is empty, return NULL. 
-        if (front == NULL) 
-            return; 
-  
-        // Store previous front and 
-        // move front one node ahead 
-        LinkNode<T>* temp = front; 
-        front = front->next; 
-  
-        // If front becomes NULL, then 
-        // change rear also as NULL 
-        if (front == NULL) 
-            rear = NULL; 
-  
-        delete (temp); 
+    this->removeFirst();
 }
 
 template <typename T>
 void Queue<T>::display()
 {
-    // check for underflow
-    if (front == NULL)
-    {
-        std::cout << "Underflow" << std::endl;
-        return;
-    }
-    // make temp LinkNode
-    LinkNode<T>* temp = front;
-
-    // display the queue
-    while (temp)
-    {
-        std::cout << temp->data << " ";
-        temp=temp->next;
-    }
-    std::cout << std::endl;
+  this->printList();
 }
 
 template <typename T>
 T Queue<T>::peekFront()
 {
-    // make temp LinkNode and return data
-    LinkNode<T>* temp = front;
-    return temp->data;
+    return this->getStart();
 }
 template <typename T>
 T Queue<T>::peekRear()
 {
-    // make temp linkNode and return data
-    LinkNode<T>* temp = rear;
-    return temp->data;
+    return this->getEnd();
 }
 
 template <typename T>
