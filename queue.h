@@ -6,9 +6,6 @@
 template <typename T>
 class Queue : public SinglyLinkedList<T>
 {
-    private:
-        LinkNode<T>* front;
-        LinkNode<T>* rear;
     public:
         /*
         template<typename T>
@@ -108,19 +105,12 @@ T Queue<T>::peekRear()
 template <typename T>
 Queue<T>::Queue()
 {
-    // set the front and rear to NULL
-    front = rear = NULL;
+    SinglyLinkedList<T>();
 }
 template <typename T>
 Queue<T>::~Queue()
 {
-    while(front != NULL)
-    {
-        LinkNode<T>* temp = front;
-        front = front->next;
-        delete temp;
-    }
-    rear = NULL;
+    this->clearList();
 }
 
 

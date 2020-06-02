@@ -6,8 +6,6 @@
 template <typename T>
 class Stack : public SinglyLinkedList<T>
 {
-    private:
-        LinkNode<T>* top;
     public:
         /*
         template<typename T>
@@ -88,12 +86,6 @@ void Stack<T>::pop()
 }
 
 template <typename T>
-T Stack<T>::isEmpty()
-{
-    return top == NULL;
-}
-
-template <typename T>
 T Stack<T>::peek()
 {
     return this->getEnd();
@@ -107,13 +99,13 @@ void Stack<T>::display()
 template <typename T>
 Stack<T>::Stack()
 {
-    top = NULL;
+    SinglyLinkedList<T>();
 }
 
 template <typename T>
 Stack<T>::~Stack()
 {
-
+    this->clearList();
 }
 
 #endif
