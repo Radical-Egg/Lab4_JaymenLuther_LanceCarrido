@@ -82,14 +82,14 @@ void Stack<T>::push(T data)
 template <typename T>
 void Stack<T>::pop()
 {
-    this->removeLast();
+    this->removeFirst();
 }
-
 template <typename T>
 T Stack<T>::peek()
 {
-    return this->getEnd();
+    return this->getStart();
 }
+
 
 template <typename T>
 void Stack<T>::display()

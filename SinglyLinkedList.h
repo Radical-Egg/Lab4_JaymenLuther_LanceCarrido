@@ -378,7 +378,7 @@ void SinglyLinkedList<T>::printList()
 	{
 		LinkNode<T>* nextNode = node->next;
 
-		std::cout << node->data << " ";
+		std::cout << node->data << " " << std::endl;
 
 		node = nextNode;
 	}
@@ -400,7 +400,7 @@ T SinglyLinkedList<T>::getData(int i)
 	{
 		return T();
 	}
-
+	std::cout << node->data;
 	return node->data;
 }
 
