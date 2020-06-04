@@ -21,15 +21,15 @@ class Queue : public SinglyLinkedList<T>
 
         /*
         template<typename T>
-        void deQueue();
+        T deQueue();
 
-        de Queue data from the Queue
+        remove and return data from the Queue
 
         Pre:	None.
-        Post:	None.
-        Return:	None.
+        Post:	throw exception if queue is empty.
+        Return:	the first data from the queue.
 		*/
-        void deQueue();
+        T deQueue();
 
         /*
         template<typename T>
@@ -80,9 +80,11 @@ void Queue<T>::enQueue(T data)
 }
 
 template <typename T>
-void Queue<T>::deQueue()
+T Queue<T>::deQueue()
 {
+    T temp = peekFront();
     this->removeFirst();
+    return temp;
 }
 
 template <typename T>

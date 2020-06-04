@@ -23,13 +23,13 @@ class Stack : public SinglyLinkedList<T>
         template<typename T>
         void pop();
 
-        pop data off the stack
+        pop and return data off the stack
 
         Pre:	None.
         Post:	None.
-        Return:	None.
+        Return:	last data pushed on the stack
 		*/
-        void pop();
+        T pop();
 
         /*
         template<typename T>
@@ -80,9 +80,11 @@ void Stack<T>::push(T data)
 }
 
 template <typename T>
-void Stack<T>::pop()
+T Stack<T>::pop()
 {
+    T temp = peek();
     this->removeFirst();
+    return temp;
 }
 template <typename T>
 T Stack<T>::peek()
