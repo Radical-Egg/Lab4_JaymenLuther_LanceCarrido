@@ -16,32 +16,25 @@ int testInput1 = 1;
 int testInput2 = 2;
 int testInput3 = 3;
 
-/*
-string testInput1 = "Zeno";
-string testInput2 = "Risa";
-string testInput3 = "Echo";
-*/
-
 int testIndex1 = 1;
 int testIndex2 = 0;
 int testIndex3 = 2;
 
 int main()
 {
+	// creating Singly Linked List
 	cout << "Initializing test list." << endl;
-
 	SinglyLinkedList<int>* testList = new SinglyLinkedList<int>();
 
+	// creating stack
 	cout << "creating testStack " << endl;
 	Stack<Dollar>* testStack = new Stack<Dollar>();
 
+	// creating queue
 	cout << "creating testQueue" << endl;
 	Queue<string>* testQueue = new Queue<string>();
 
-	
-
-	// SinglyLinkedList<string>* testList = new SinglyLinkedList<string>();
-
+	// list stuff
 	cout << "Test list initialized." << endl;
 	printResult(testList);
 
@@ -134,108 +127,119 @@ int main()
 	delete testList;
 	cout << "Test list deleted." << endl;
 
+	cout << "\nPress Any Key to Continue" << endl;
+	cin.get();
+
 	// stack stuff
+	// creating dollar objects for the stack
+	cout << "\n\n===== Working with testStack =====" << endl;
+	cout << "\nCreating 5 dollar objects" << endl;
 
-	cout << "Working with testStack " << endl;
-	cout << "Creating 5 dollar objects" << endl;
-	Dollar* myDollar = new Dollar[5];
-	myDollar[0].setDval(50);
+	Dollar* myDollar = new Dollar[5]; // dollar objects
+	// set vals for dollar obj 0
+	myDollar[0].setDval(50); 
 	myDollar[0].setCval(25);
-
+	// set vals for dollar obj 1
 	myDollar[1].setDval(100);
 	myDollar[1].setCval(30);
-
+	// set vals for dollar obj 2
 	myDollar[2].setDval(300);
 	myDollar[2].setCval(50);
-
+	// set vals for dollar obj 3
 	myDollar[3].setDval(10);
 	myDollar[3].setCval(3);
-
+	// set vals for dollar obj 4
 	myDollar[4].setDval(60);
 	myDollar[4].setCval(50);
 	
-	cout << "Push Dollar object 0" << endl;
-	testStack->push(myDollar[0]);
+	// showing push, pop, peek and display
+	cout << "Push Dollar object 0 - Dollar 50 25 Cent" << endl;
+	testStack->push(myDollar[0]); // push
 
-	cout << "Push Dollar object 1" << endl;
-	testStack->push(myDollar[1]);
+	cout << "Push Dollar object 1 - Dollar 100 30 Cent" << endl;
+	testStack->push(myDollar[1]); // push
 
-	cout << "Push Dollar object 2" << endl;
-	testStack->push(myDollar[2]);
+	cout << "Push Dollar object 2 - Dollar 300 50 Cent" << endl;
+	testStack->push(myDollar[2]); // push
 
-	cout << "Push Dollar object 3" << endl;
-	testStack->push(myDollar[3]);
+	cout << "Push Dollar object 3 - Dollar 10 3 Cent" << endl;
+	testStack->push(myDollar[3]); // push
 
-	cout << "Push Dollar object 4" << endl;
-	testStack->push(myDollar[4]);
+	cout << "Push Dollar object 4 - Dollar 60 50 Cent" << endl;
+	testStack->push(myDollar[4]); // push
 
-	cout << "Here is the top element on the stack" << endl;
-	testStack->peek();
+	cout << "\n===== Here is the top element on the stack =====" << endl;
+	testStack->peek(); // show peek
+	cout << endl;
 
-	cout << "Here is the current Stack" << endl;
-	testStack->display();
+	cout << "===== Here is the current Stack =====" << endl;
+	testStack->display(); // display results
 
-	cout << "\nPop" << endl;
-	testStack->pop();
+	cout << "\nPop ";
+	testStack->pop(); // pop
 
-	cout << "Pop" << endl;
-	testStack->pop();
+	cout << "Pop ";
+	testStack->pop(); // pop
 
-	cout << "Here is the stack after we popped" << endl;
-	testStack->display();
+	cout << "\n===== Here is the stack after we popped =====" << endl;
+	testStack->display(); // display results after pop
 	cout << endl;
 
 	cout << "Deleting testStack and Dollar Objects" << endl;
-	delete testStack;
-	delete[] myDollar;
+	delete testStack; // free mem
+	delete[] myDollar; // free mem
 	cout << "testStack and Dollar objects Deleted" << endl;
+	
+	cout << "\nPress Any Key to Continue" << endl;
+	cin.get();
 
 	// Queue stuff
 
-	string* strArry = new string[5];
+	string* strArry = new string[5]; // dynamic string array
 
+	// assign some strings
 	strArry[0] = "string 1";
 	strArry[1] = "this is string2";
 	strArry[2] = "Another string here";
 	strArry[3] = "again this is another string";
 	strArry[4] = "the last string";
 
-	cout << "Working with testQueue " << endl;
-	cout << "enQueue strArry 0" << endl;
-	testQueue->enQueue(strArry[0]);
+	cout << "\n ===== Working with testQueue =====" << endl;
+	cout << "enQueue strArry 0" << endl; 
+	testQueue->enQueue(strArry[0]); // enQueue
 
 	cout << "enQueue strArry 1" << endl;
-	testQueue->enQueue(strArry[1]);
+	testQueue->enQueue(strArry[1]); // enQueue
 
 	cout << "enQueue strArry 2" << endl;
-	testQueue->enQueue(strArry[2]);
+	testQueue->enQueue(strArry[2]); // enQueue
 
 	cout << "enQueue strArry 3" << endl;
-	testQueue->enQueue(strArry[3]);
+	testQueue->enQueue(strArry[3]); // enQueue
 
 	cout << "enQueue strArry 4" << endl;
-	testQueue->enQueue(strArry[4]);
+	testQueue->enQueue(strArry[4]); // enQueue
 
-	cout << "Here is the Queue" << endl;
-	testQueue->display();
+	cout << "\n===== Here is the Queue =====" << endl;
+	testQueue->display(); // display results
 
-	cout << "deQueue" << endl;
-	testQueue->deQueue();
+	cout << "\ndeQueue ";
+	testQueue->deQueue(); // deQueue
 
-	cout << "Queue Front: ";
-	testQueue->peekFront();
+	cout << " \nQueue Front: ";
+	testQueue->peekFront(); // show front
 	cout << endl;
 
-	cout << "Queue Rear ";
-	testQueue->peekRear();
+	cout << "Queue Rear: ";
+	testQueue->peekRear(); // show rear
 	cout << endl;
 
-	cout << "Queue after deQueue" << endl;
-	testQueue->display();
+	cout << "\n===== Queue after deQueue =====" << endl;
+	testQueue->display(); // show results after deQueue
 
 	cout << "Deleting testQueue and strArry" << endl;
-	delete testQueue;
-	delete[] strArry;
+	delete testQueue; // free mem
+	delete[] strArry; // free mem
 	cout << "testQueue and strArry deleted" << endl;
 		
 	return 0;
