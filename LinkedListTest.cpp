@@ -6,6 +6,30 @@
 #include <iostream>
 #include <string>
 
+
+/*
+Psuedocode - 
+This project will consist of the following files
+currency.cpp - from lab1
+currency.h - from lab1
+dollar.cpp from lab1
+dollar.h from lab1
+
+create a linkNode.h for our linked list and a SinglyLinkedList.h for our singlyLinkedList
+create a stack and queue class that a derived from our singly linked list
+
+in the main:
+	we will create 5 singlylinkedlist object of type integers and perform tests on the classes funcionality
+	create 5 stack objects of type dollar and perform tests on the classes functionality,
+	create 5 queue objects of type string and perform tests on the classes functionality
+
+to compile
+g++ *.cpp
+
+to execute 
+./a.out
+
+*/
 using namespace std;
 
 template<typename T>
